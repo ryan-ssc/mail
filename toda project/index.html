@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" /> gth
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>todaracer-recuit</title>
+    <link rel="stylesheet" href="/toda project/mailform-v8.0.1/css/mailform.css">
+    <link rel="stylesheet" href="/toda project/mailform-v8.0.1/css/jquery.datetimepicker.css">
     <link rel="stylesheet" href="style.css" />
     <script src="jQuery.js"></script>
     <script src="all.js"></script>
@@ -171,6 +173,76 @@
         <h3>TEL:<span>048-441-6026</span></h3>
         <p>(ボートレース戸田本場開催中10：00～16：00電話受付)</p>
       </div>
+      <form action="/assets/php/mailform.php" method="post" id="mail_form">
+        <dl>
+          <dt><i><span class="required">必須</span></i>お名前</dt>
+          <dd class="required">
+            <input type="text" name="name_1" value="">
+            <span>例:山田太郎</span>
+          <span class="error_blank"></span></dd>
+        </dl>
+
+        <dl>
+          <dt><i><span class="required">必須</span></i>かな</dt>
+          <dd class="required">
+            <input type="text" name="read_1" value="">
+             <span>例:やまだたろう</span>
+          <span class="error_blank"></span></dd>
+        </dl>
+
+        <dl>
+          <dt><i><span class="required">必須</span></i>性別</dt>
+          <dd class="required">
+            <ul>
+              <li>
+                <label><input type="radio" name="gender" value="男性">男性</label>
+              </li>
+              <li>
+                <label><input type="radio" name="gender" value="女性">女性</label>
+              </li>
+            </ul>
+          <span class="error_blank"></span></dd>
+        </dl>
+        <dl>
+          <dt><i><span class="required">必須</span></i>生年月日</dt>
+          <dd class="required">
+            <input type="text" name="birth" value="">
+          <span class="error_blank"></span></dd>
+        </dl>
+        <dl>
+          <dt><i><span class="required">必須</span></i>郵便番号</dt>
+          <dd class="required">
+            <input type="text" name="postal" value="" onkeyup="AjaxZip3.zip2addr( this,'','address','address' );">
+            <span>例:1234567（ハイフン無し）</span>
+            <br><a href="http://www.post.japanpost.jp/zipcode/" target="_blank">郵便番号検索</a>
+          <span class="error_blank"></span></dd>
+        </dl>
+
+        <dl>
+          <dt><i><span class="required">必須</span></i>住所</dt>
+          <dd class="required">
+            <input type="text" name="address" value="">
+            <span>建物名までご入力ください。</span>
+          <span class="error_blank"></span></dd>
+        </dl>
+        <dl>
+          <dt><i><span class="required">必須</span></i>電話番号</dt>
+          <dd class="required">
+            <input type="tel" name="phone" value="">
+            <span>携帯可。ハイフンなしでご入力ください。</span>
+          <span class="error_blank"></span></dd>
+        </dl>
+        <dl>
+          <dt><i><span class="required">必須</span></i>メールアドレス</dt>
+          <dd class="required">
+            <input type="email" name="mail_address" value="">
+            <span>例:example@toda-boatracer.com</span>
+          <span class="error_blank"></span><span class="error_format"></span></dd>
+        </dl>
+        <p id="form_submit">
+          <input type="button" id="form_submit_button" value="送信">
+        </p>
+      </form>
       <!-- 参考フォーム -->
       <div class="btn-send">
         <img src="img/btn-send.png" alt="btn-send" />
